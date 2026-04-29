@@ -1,5 +1,13 @@
 stages:
+  - test
   - build
+
+test:
+  statge: test
+  image: node:20-alpine
+  script:
+    - npm ci
+    - npm run test
 
 build_image:
   stage: build
