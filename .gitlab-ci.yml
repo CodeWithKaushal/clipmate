@@ -3,7 +3,7 @@ stages:
   - build
 
 test:
-  statge: test
+  stage: test
   image: node:20-alpine
   script:
     - npm ci
