@@ -1,42 +1,42 @@
 stages:
   - test
-  # - build
+  - build
 
-# .test_echo_template: &test_echo
-#   stage: test
-#   tags:
-#     - clipDEV
+.test_echo_template: &test_echo
+  stage: test
+  tags:
+    - clipDEV
 
 test_echo_1:
-  # <<: *test_echo
+  <<: *test_echo
   script:
     - echo "test job 1"
 
 test_echo_2:
-  # <<: *test_echo
+  <<: *test_echo
   script:
     - echo "test job 2"
 
 test_echo_3:
-  # <<: *test_echo
+  <<: *test_echo
   script:
     - echo "test job 3"
 
 test_echo_4:
-  # <<: *test_echo
+  <<: *test_echo
   script:
     - echo "test job 4"
 
 
-# build_image:
-#   stage: build
-#   tags:
-#     - dev
-#   image: docker:latest
-#   services:
-#     - docker:dind
-#   variables:
-#     DOCKER_TLS_CERTDIR: "/certs"
-#   script:
-#     - docker build -t clipmate:latest .
+build_image:
+  stage: build
+  tags:
+    - dev
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  script:
+    - docker build -t clipmate:latest .
 
