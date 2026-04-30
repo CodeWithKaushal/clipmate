@@ -5,7 +5,7 @@ stages:
 test:
   stage: test
   tags:
-    - dev
+    - clipDEV
   image: node:20-alpine
   script:
     - npm ci
@@ -14,7 +14,7 @@ test:
 echo_smoke:
   stage: test
   tags:
-    - dev
+    - clipDEV
   script:
     - echo "CI smoke check on dev runner"
 
