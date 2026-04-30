@@ -4,13 +4,24 @@ stages:
 
 test:
   stage: test
+  tags:
+    - dev
   image: node:20-alpine
   script:
     - npm ci
     - npm run test
 
+echo_smoke:
+  stage: test
+  tags:
+    - dev
+  script:
+    - echo "CI smoke check on dev runner"
+
 build_image:
   stage: build
+  tags:
+    - dev
   image: docker:latest
   services:
     - docker:dind
