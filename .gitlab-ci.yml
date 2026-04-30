@@ -1,6 +1,6 @@
 stages:
   - test
-  # - build
+  - build
 
 test:
   stage: test
@@ -18,14 +18,14 @@ echo_smoke:
   script:
     - echo "CI smoke check on dev runner"
 
-# build_image:
-#   stage: build
-#   tags:
-#     - dev
-#   image: docker:latest
-#   services:
-#     - docker:dind
-#   variables:
-#     DOCKER_TLS_CERTDIR: "/certs"
-#   script:
-#     - docker build -t clipmate:latest .
+build_image:
+  stage: build
+  tags:
+    - dev
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  script:
+    - docker build -t clipmate:latest .
