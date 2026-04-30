@@ -50,3 +50,4 @@ build_echo:
 #     DOCKER_TLS_CERTDIR: "/certs"
 #   script:
 #     - docker build -t clipmate:latest .
+
