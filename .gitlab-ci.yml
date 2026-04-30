@@ -27,10 +27,7 @@ test_echo_4:
   script:
     - echo "test job 4"
 
-test_echo_5:
-  <<: *test_echo
-  script:
-    - echo "test job 5"
+
 
 
 build_image:
