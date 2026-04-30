@@ -28,8 +28,6 @@ test_echo_4:
     - echo "test job 4"
 
 
-
-
 build_image:
   stage: build
   tags:
