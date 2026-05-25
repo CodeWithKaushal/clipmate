@@ -2,6 +2,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { DownloadSection } from "@/components/DownloadSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CategoryShowcase } from "@/components/CategoryShowcase";
 import { WhyBuilt } from "@/components/WhyBuilt";
@@ -25,6 +26,8 @@ const Index = () => {
       <Navbar />
       <main id="main-content" tabIndex={-1}>
         <Hero />
+        <Divider />
+        <DownloadSection />
         <Divider />
         <Features />
         <Divider />

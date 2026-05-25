@@ -1,6 +1,7 @@
 import { Logo } from "./Logo";
 
 const LINKS = [
+  { href: "#download", label: "Download" },
   { href: "#features", label: "Features" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#waitlist", label: "Waitlist" },
@@ -35,7 +36,9 @@ export const Footer = () => {
           </nav>
 
           <p className="text-sm text-muted-foreground md:text-right">
-            Chrome Web Store release in progress.
+            Desktop app for Windows & Linux.
+            <br />
+            Chrome extension coming soon.
           </p>
         </div>
 

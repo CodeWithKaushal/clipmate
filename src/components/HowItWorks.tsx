@@ -1,23 +1,23 @@
-import { Download, Clipboard, MousePointer, ArrowRight } from "lucide-react";
+import { Download, Clipboard, Keyboard, ArrowRight } from "lucide-react";
 
 const STEPS = [
   {
     num: "01",
     icon: Download,
-    title: "Install ClipMate",
-    desc: "Add ClipMate from the Chrome Web Store in one click. No account, no setup, no permissions beyond what's needed.",
+    title: "Download & install",
+    desc: "Get the Windows .exe or Linux AppImage from the download section. Install once — ClipMate lives in your system tray. No account required.",
   },
   {
     num: "02",
     icon: Clipboard,
-    title: "Copy Like Normal",
-    desc: "That's it. Every copy you make is silently captured and categorized. You don't change anything about how you work.",
+    title: "Copy like normal",
+    desc: "Keep working as you always do. Every text copy is saved locally in the background while ClipMate runs.",
   },
   {
     num: "03",
-    icon: MousePointer,
-    title: "Open the Popup When You Need It",
-    desc: "Click the ClipMate icon in your Chrome toolbar. Your clips are there, categorized and searchable. Find what you need in seconds.",
+    icon: Keyboard,
+    title: "Press Win+V when you need it",
+    desc: "Open clipboard history with Win+V (or Ctrl+Shift+V). Search, pick a clip with Enter, and paste it anywhere. Same flow as Windows clipboard history.",
   },
 ];
 

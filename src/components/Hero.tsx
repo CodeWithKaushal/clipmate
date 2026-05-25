@@ -12,7 +12,7 @@ export const Hero = () => {
           {/* Copy */}
           <div className="reveal w-full max-w-[700px] xl:max-w-[38rem] 2xl:max-w-[44rem] 3xl:max-w-[48rem]">
             <span className="inline-flex items-center rounded-full border border-primary/50 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
-              Coming Soon to Chrome Web Store
+              Desktop app — Windows & Linux
             </span>
 
             <h1 className="mt-6 font-display font-bold tracking-tight h1-fluid">
@@ -21,19 +21,25 @@ export const Hero = () => {
             </h1>
 
             <p className="mt-6 body-fluid text-muted-foreground leading-relaxed">
-              You copy something useful. Three minutes later it's gone. ClipMate runs silently in
-              your browser, catches every copy, tags it automatically — code, links, JSON, OTPs,
-              emails — and keeps everything one click away. No cloud. No account. Just your
-              clipboard, finally under control.
+              You copy something useful. Three minutes later it's gone. ClipMate runs in your system
+              tray, catches every copy, and opens full history with{" "}
+              <strong className="text-foreground">Win+V</strong> — just like Windows clipboard
+              history, but local, searchable, and always under your control. No cloud. No account.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href="#waitlist"
+                href="#download"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-glow transition-all hover:bg-primary-glow hover:-translate-y-0.5"
               >
-                Join the Waitlist
+                Download for free
                 <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#how-it-works"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface"
+              >
+                How to use
               </a>
             </div>
 
@@ -42,7 +48,7 @@ export const Hero = () => {
               <span aria-hidden>·</span>
               <span>No Account Needed</span>
               <span aria-hidden>·</span>
-              <span>Chrome Extension</span>
+              <span>Win+V · Ctrl+Shift+V</span>
             </div>
           </div>
 

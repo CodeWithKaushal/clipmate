@@ -7,6 +7,7 @@ import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
+  { href: "#download", label: "Download" },
   { href: "#features", label: "Features" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#categories", label: "Categories" },
@@ -54,10 +55,10 @@ export const Navbar = () => {
           <ContactUsButton className="hidden sm:inline-flex" />
           <GiveFeedbackButton className="hidden sm:inline-flex" />
           <a
-            href="#waitlist"
+            href="#download"
             className="hidden sm:inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-glow hover:-translate-y-0.5"
           >
-            Join Waitlist
+            Download
           </a>
           <button
             type="button"
@@ -93,11 +94,11 @@ export const Navbar = () => {
               onClick={() => setOpen(false)}
             />
             <a
-              href="#waitlist"
+              href="#download"
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
             >
-              Join Waitlist
+              Download
             </a>
           </nav>
         </div>

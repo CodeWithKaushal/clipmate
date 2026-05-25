@@ -3,7 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" && process.env.ELECTRON_BUILD === "1" ? "./" : "/",
   server: {
     host: "::",
     port: 3000,
@@ -18,4 +19,12 @@ export default defineConfig({
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "@tanstack/react-query", "@tanstack/query-core"],
   },
-});
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        desktop: path.resolve(__dirname, "desktop.html"),
+      },
+    },
+  },
+}));

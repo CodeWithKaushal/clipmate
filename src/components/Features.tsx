@@ -29,7 +29,7 @@ const FEATURES = [
   {
     icon: Lock,
     title: "Stays on Your Device",
-    desc: "Nothing is sent anywhere. ClipMate stores everything locally in your browser. No server, no sync, no account. Your clipboard history is yours alone.",
+    desc: "Nothing is sent anywhere. ClipMate stores everything on your computer. No server, no sync, no account. Your clipboard history is yours alone.",
   },
 ];
 

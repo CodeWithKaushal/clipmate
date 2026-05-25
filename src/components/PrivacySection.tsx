@@ -28,14 +28,12 @@ export const PrivacySection = () => {
 
           <div>
             <h3 className="font-display font-semibold text-foreground text-base mb-2">
-              ClipMate extension (when installed)
+              ClipMate desktop app (when installed)
             </h3>
             <p>
-              ClipMate is designed to process and store clipboard-related data locally in your
-              browser. It does not require an account for core functionality. Sensitive categories
-              (such as one-time codes) are intended to be short-lived according to the product
-              settings described on this site. Review the permissions shown on the Chrome Web Store
-              listing before installing any version you download from there.
+              The desktop app stores clipboard text history locally on your computer (in your user
+              data folder). It does not require an account and does not send clipboard contents to
+              our servers. A future Chrome extension will follow the same local-first approach.
             </p>
           </div>
 

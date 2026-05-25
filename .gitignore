@@ -9,7 +9,12 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-electron
 dist-ssr
+release
+public/downloads/*.AppImage
+public/downloads/*.deb
+public/downloads/*.exe
 *.local
 
 # Editor directories and files

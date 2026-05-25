@@ -1,8 +1,15 @@
 {
   "name": "clipmate",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Local clipboard history — open with Win+V",
+  "homepage": "https://clipmate-jade.vercel.app/",
+  "author": {
+    "name": "ClipMate",
+    "email": "hello@clipmate.app"
+  },
   "type": "module",
+  "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +17,52 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "electron:compile": "tsc -p tsconfig.electron.json",
+    "electron:dev": "npm run electron:compile && concurrently -k \"ELECTRON_DEV=1 vite\" \"wait-on tcp:3000 && ELECTRON_DEV=1 electron .\"",
+    "electron:build": "ELECTRON_BUILD=1 vite build && npm run electron:compile && electron-builder",
+    "electron:build:win": "ELECTRON_BUILD=1 vite build && npm run electron:compile && electron-builder --win",
+    "electron:build:linux": "ELECTRON_BUILD=1 vite build && npm run electron:compile && electron-builder --linux",
+    "copy:downloads": "node scripts/copy-downloads.mjs"
+  },
+  "build": {
+    "appId": "com.clipmate.desktop",
+    "productName": "ClipMate",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "ClipMate-${version}-portable.${ext}"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "maintainer": "ClipMate <hello@clipmate.app>",
+      "executableArgs": ["--no-sandbox"]
+    },
+    "appImage": {
+      "executableArgs": ["--no-sandbox"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "ClipMate-Setup-${version}.${ext}"
+    }
   },
   "dependencies": {
     "@encatch/web-sdk": "^1.2.1",
@@ -84,6 +136,10 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
     "vite": "^5.4.19",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "concurrently": "^9.1.2",
+    "electron": "^35.1.5",
+    "electron-builder": "^25.1.8",
+    "wait-on": "^8.0.3"
   }
 }
