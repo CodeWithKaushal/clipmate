@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { ContactUsButton } from "./ContactUsButton";
+import { GiveFeedbackButton } from "./GiveFeedbackButton";
 import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 
@@ -49,6 +51,8 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          <ContactUsButton className="hidden sm:inline-flex" />
+          <GiveFeedbackButton className="hidden sm:inline-flex" />
           <a
             href="#waitlist"
             className="hidden sm:inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-glow hover:-translate-y-0.5"
@@ -80,10 +84,18 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
+            <ContactUsButton
+              className="mt-2 w-full justify-center py-2.5"
+              onClick={() => setOpen(false)}
+            />
+            <GiveFeedbackButton
+              className="w-full justify-center py-2.5"
+              onClick={() => setOpen(false)}
+            />
             <a
               href="#waitlist"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
             >
               Join Waitlist
             </a>

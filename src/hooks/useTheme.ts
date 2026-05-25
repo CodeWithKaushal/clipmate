@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
+import { syncEncatchTheme, type ClipmateTheme } from "@/lib/encatch";
 
-type Theme = "dark" | "light";
+type Theme = ClipmateTheme;
 
 const STORAGE_KEY = "clipmate-theme";
 
@@ -19,6 +20,7 @@ export function useTheme() {
     if (theme === "dark") root.classList.add("dark");
     else root.classList.remove("dark");
     localStorage.setItem(STORAGE_KEY, theme);
+    syncEncatchTheme(theme);
   }, [theme]);
 
   const toggle = useCallback(() => {
